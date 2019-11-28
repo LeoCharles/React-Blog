@@ -5,7 +5,18 @@ ol, ul {
   padding: 0;
 }
 
+/* 文字超出显示省略 */
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .app-wrapper {
   margin-top: 40px;
   background: #fff;
+}
+
+.app-main {
+  padding: 0 20px;
 }
