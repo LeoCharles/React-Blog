@@ -1,10 +1,7 @@
 /* 页面左侧边栏 */
 
 .sider {
-  padding: 16px 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-right: 1px solid #ebedf0;
 }
 
 /* 用户卡片 */
@@ -21,7 +18,7 @@
 .user-card .title {
   font-size: 1.5em;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .user-card .links {
   display: flex;
@@ -32,12 +29,43 @@
   cursor: pointer;
 }
 .user-card .links .link:hover {
-  border-radius: 4px;
-  background-color: #eee;
+  color: #1890ff;
 }
 .user-card .links .link-icon {
   width: 16px;
   height: 16px;
   font-size: 16px;
   margin-right: 4px;
+}
+
+/* 热门文章 */
+.article-list {
+  text-align: left;
+  padding: 0 20px;
+}
+.article-list .article-item {
+  line-height: 32px;
+  cursor: pointer;
+}
+.article-list .article-item a {
+  display: block;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.65);
+}
+.article-list .article-item a:hover {
+  color: #1890ff;
+}
+
+/* 标签列表 */
+.tag-list {
+  padding: 0 20px;
+}
+.tag-list .ant-tag {
+  margin-bottom: 8px;
+}
+.tag-list .ant-tag a {
+  color: inherit;
 }
