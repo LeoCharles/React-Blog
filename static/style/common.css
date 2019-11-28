@@ -1,0 +1,10 @@
+/* 页面公共样式 */
+body {
+  background-color: #f1f2f3;
+}
+
+.app-wrapper {
+  padding: 40px 0 0;
+  height: calc(100vh - 64px);
+  background: #fff;
+}
