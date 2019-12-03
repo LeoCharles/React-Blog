@@ -1,5 +1,62 @@
 /* 文章列表 */
 
-.article-list {
+.article-list .article {
+  position: relative;
+  border: 1px solid #ebedf0;
+  padding: 16px 24px;
+  margin: 0 20px 20px 0;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.article-list .article:hover {
+  background-color: #e6f7ff;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -1px, 0);
+}
+.article-list .article-title {
+  line-height: 1.2;
+  font-size: 22px;
+  font-weight: 600;
+  color: #394d69;
+}
+.article-list .article-title:hover {
+  color: #1890ff;
+}
+.article-list .post-time {
+  font-size: 12px;
+  margin-left: 20px;
+}
+.article-list .article-content {
+  max-height: 260px;
+  overflow: hidden;
+}
+.article-list .article-info {
+  margin-top: 10px;
+}
+.article-list .article-info .count-box {
+  margin-right: 8px;
+  border-right: 1px solid #ebedf0;
+}
+.article-list .article-info .count {
+  margin: 0 8px;
+}
+.article-list .article-info .ant-tag {
+  margin-left: 8px;
+}
+.article-list .article-info a {
+  color: inherit;
+}
 
+/* 文章预览列表 */
+.preview-list .item {
+  line-height: 32px;
+  cursor: pointer;
+}
+.preview-list .item a {
+  display: block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.preview-list .item a:hover {
+  color: #1890ff;
 }
