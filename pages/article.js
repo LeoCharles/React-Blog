@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Header from '../components/Header/index'
 import Sider from '../components/Sider/index'
-import ArticleList from '../components/ArticleList/index'
+import ArticleDetail from '../components/ArticleDetail/index'
 import { Row, Col } from 'antd'
 
 const Home = () => (
@@ -17,7 +17,7 @@ const Home = () => (
         <Sider />
       </Col>
       <Col xs={24} sm={24} md={18} lg={18} xl={20}>
-        <ArticleList />
+        <ArticleDetail />
       </Col>
     </Row>
   </>

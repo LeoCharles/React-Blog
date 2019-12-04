@@ -22,23 +22,17 @@
 .article-list .article-title:hover {
   color: #1890ff;
 }
-.article-list .post-time {
-  font-size: 12px;
-  margin-left: 20px;
-}
 .article-list .article-content {
   max-height: 260px;
   overflow: hidden;
 }
 .article-list .article-info {
   margin-top: 10px;
-}
-.article-list .article-info .count-box {
-  margin-right: 8px;
-  border-right: 1px solid #ebedf0;
+  display: flex;
+  justify-content: space-between;
 }
 .article-list .article-info .count {
-  margin: 0 8px;
+  margin: 0 16px 0 8px;
 }
 .article-list .article-info .ant-tag {
   margin-left: 8px;
@@ -59,4 +53,30 @@
 }
 .preview-list .item a:hover {
   color: #1890ff;
+}
+
+/* 右侧抽屉 */
+.drawer-btn {
+  width: 40px;
+  height: 40px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px 0 0 4px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.drawer-btn:hover {
+  color: #1890ff;
+}
+
+/* 响应式 */
+@media screen and (max-width: 992px) {
+  .article-list .article-title {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .article-list .article-title {
+    font-size: 16px;
+  }
 }
