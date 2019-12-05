@@ -26,18 +26,18 @@
   max-height: 260px;
   overflow: hidden;
 }
-.article-list .article-info {
+.article-list .article-desc {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
-.article-list .article-info .count {
+.article-list .article-desc .count {
   margin: 0 16px 0 8px;
 }
-.article-list .article-info .ant-tag {
+.article-list .article-desc .ant-tag {
   margin-left: 8px;
 }
-.article-list .article-info a {
+.article-list .article-desc a {
   color: inherit;
 }
 

@@ -54,8 +54,8 @@ const ArticleList = () => {
                 <span className="article-title">{item.title}</span>
               </Divider>
               <div className="article-content">{item.content}</div>
-              <div className="article-info">
-                <span className="info-left">
+              <div className="article-desc">
+                <span>
                   <Icon type="message" />
                   <span className="count">{item.commentCount}</span>
                   <Icon type="eye" />
@@ -63,8 +63,8 @@ const ArticleList = () => {
                   <Icon type="tags" />
                   <Tag>{item.tag}</Tag>
                 </span>
-                <span className="info-left">
-                  <span className="post-time">{item.createdAt}</span>
+                <span>
+                  <span>{item.createdAt}</span>
                 </span>
               </div>
             </li>
