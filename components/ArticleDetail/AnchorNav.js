@@ -8,7 +8,7 @@ const getAnchorList = (str) => {
   const pushItem = (arr, item) => {
     const len = arr.length
     const matchItem = arr[len - 1]
-    if(matchItem && matchItem.tag !== item.age) {
+    if (matchItem && matchItem.tag !== item.age) {
       pushItem(matchItem.children, item)
     } else {
       arr.push(item)
@@ -39,11 +39,11 @@ const getAnchorList = (str) => {
 const AnchorNav = ({content}) => {
   const list = getAnchorList(content)
   console.log(list)
-  const renderLink = ({href, title, children}) => {
-    <Link>
+  const renderLink = ({href, title, children}) => (
+    <Link key={href} href={href} title={title}>
       {children.length > 0 && children.map(sub => renderLink(sub))}
     </Link>
-  }
+  )
   return (
     <Anchor affix={false}>{list.map(renderLink)}</Anchor>
   )
