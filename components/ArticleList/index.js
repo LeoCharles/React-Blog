@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { Row, Col,  Divider, Drawer, Tag, Icon } from 'antd'
+import PreviewList from './PreviewList'
 import '../../static/style/article-list.css'
 
 const ArticleList = () => {
@@ -34,19 +36,14 @@ const ArticleList = () => {
   ])
   const [drawerVisible, showDrawerVisible ] = useState(false)
 
-  const previewList = (
-    <ul className="preview-list">
-      {articleList.map(item => (
-        <li className="item" key={item.id}>
-          <a className="text-ellipsis">{item.title}</a>
-        </li>
-      ))}
-    </ul>
-  )
+  // 判断是否为大屏幕
+  const isLargeScreen = useMediaQuery({
+    query: '(min-width: 1200px)'
+  })
 
   return (
     <Row className="app-main" >
-      <Col xs={23} sm={23} md={23} lg={23} xl={18}>
+      <Col xs={24} sm={24} md={24} lg={24} xl={18}>
         <ul className="article-list">
           {articleList.map(item => (
             <li className="article" key={item.id}>
@@ -73,22 +70,23 @@ const ArticleList = () => {
         </ul>
       </Col>
       <Col xs={0} sm={0} md={0} lg={0} xl={6}>
-        <Divider >文章列表</Divider>
-        { previewList }
+        <PreviewList list={articleList} title="文章列表" />
       </Col>
-      <Col xs={1} sm={1} md={1} lg={1} xl={0}>
-        <div
-          className="drawer-btn"
-          onClick={() => showDrawerVisible(true)}>
-          <Icon type='menu-o' />
-        </div>
-        <Drawer
-          visible={drawerVisible}
-          onClose={() => showDrawerVisible(false)}
-          title="文章列表">
-          { previewList }
-        </Drawer>
-      </Col>
+      { !isLargeScreen && (
+        <>
+          <div
+            className="drawer-btn"
+            onClick={() => showDrawerVisible(true)}>
+            <Icon type='menu-o' />
+          </div>
+          <Drawer
+            visible={drawerVisible}
+            onClose={() => showDrawerVisible(false)}
+            title="文章列表">
+            <PreviewList list={articleList} />
+          </Drawer>
+        </>
+      )}
     </Row>
   )
 }

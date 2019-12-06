@@ -13,10 +13,10 @@ const Home = () => (
     </Head>
     <Header />
     <Row className="app-wrapper">
-      <Col xs={0} sm={0} md={6} lg={6} xl={4}>
+      <Col xs={0} sm={0} md={6} lg={6} xl={5}>
         <Sider />
       </Col>
-      <Col xs={24} sm={24} md={18} lg={18} xl={20}>
+      <Col xs={24} sm={24} md={18} lg={18} xl={19}>
         <ArticleDetail />
       </Col>
     </Row>

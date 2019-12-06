@@ -93,3 +93,9 @@
 .dropdown .search-icon {
   color: inherit;
 }
+
+@media screen and (max-width: 992px) {
+  .nav-bar {
+    text-align: center;
+  }
+}

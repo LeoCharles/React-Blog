@@ -9,9 +9,9 @@ import '../../static/style/header.css'
 const CommonHeader = () => {
   return (
     <Row className="header">
-      <Col xs={24} sm={6} md={6} lg={6} xl={4}>
+      <Col xs={24} sm={0} md={6} lg={6} xl={5}>
         <Row className="header-left">
-          <Col xs={16} sm={24}>
+          <Col xs={16} sm={0} md={24}>
             <h1 className="logo">
               <a href="/">刘木木的博客</a>
             </h1>
@@ -21,7 +21,7 @@ const CommonHeader = () => {
           </Col>
         </Row>
       </Col>
-      <Col xs={0} sm={18} md={18} lg={18} xl={20}>
+      <Col xs={0} sm={24} md={18} lg={18} xl={19}>
         <Row className="header-right">
           <Col xs={0} sm={0} md={0} lg={6} xl={8}>
             <SearchBar />

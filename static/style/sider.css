@@ -21,21 +21,16 @@
   margin-top: 12px;
 }
 .user-card .links {
-  display: flex;
-  justify-content: space-around;
-}
-.user-card .links .link {
-  padding: 0 8px;
+  font-size: 14px;
+  margin-bottom: 6px;
   cursor: pointer;
 }
-.user-card .links .link:hover {
+.user-card .links:hover {
   color: #1890ff;
 }
 .user-card .links .link-icon {
-  width: 16px;
-  height: 16px;
   font-size: 16px;
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 /* 热门文章 */
