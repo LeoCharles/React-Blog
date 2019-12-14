@@ -69,7 +69,7 @@ const ArticleList = () => {
 
         </ul>
       </Col>
-      <Col xs={0} sm={0} md={0} lg={0} xl={6}>
+      <Col xs={0} sm={0} md={0} lg={0} xl={6} >
         <PreviewList list={articleList} title="文章列表" />
       </Col>
       { !isLargeScreen && (

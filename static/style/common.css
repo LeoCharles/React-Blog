@@ -19,7 +19,8 @@ ol, ul {
 
 .app-main {
   padding: 0 20px;
-  min-height: 50vh;
+  height: calc(100vh - 64px - 40px);
+  overflow: auto;
 }
 
 /* 右侧抽屉 */
