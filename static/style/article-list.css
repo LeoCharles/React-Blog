@@ -44,8 +44,9 @@
 }
 
 /* 文章预览列表 */
-.preview {
-
+.preview-list {
+  position: fixed;
+  top: 104px;
 }
 .preview-list .item {
   line-height: 32px;

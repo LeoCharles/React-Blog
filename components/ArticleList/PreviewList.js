@@ -1,17 +1,20 @@
 import React from 'react'
-import { Divider } from 'antd'
+import Link from 'next/link'
+import { Affix, Divider } from 'antd'
 
 const PreviewList = ({list, title}) => (
-  <>
-    { title && <Divider >{title}</Divider> }
+  <Affix offsetTop={104}>
     <ul className="preview-list">
+      { title && <Divider orientation="left">{title}</Divider> }
       {list.map(item => (
         <li className="item" key={item.id}>
-          <a className="text-ellipsis">{item.title}</a>
+          <Link href={{pathname: '/article', query: {id: item.id}}}>
+            <a className="text-ellipsis">{item.title}</a>
+          </Link>
         </li>
       ))}
     </ul>
-  </>
+  </Affix>
 )
 
 export default PreviewList

@@ -8,7 +8,7 @@ const pushToc = (arr, currentToc) => {
   const lastToc = arr[len - 1] // 同级目录列表的最后一个
 
   // 判断当前的目录级别和同级目录列表的最后一个是否相同
-  if (lastToc && lastToc.tag !== currentToc.tag) {
+  if (lastToc && currentToc.level > lastToc.level) {
     // 如果不同，就将当前目录作为最后一个目录的子目录
     pushToc(lastToc.children, currentToc)
   } else {
@@ -17,11 +17,11 @@ const pushToc = (arr, currentToc) => {
   }
 }
 
-// 匹配文章标题来生成目录树
-const getAnchorList = (str) => {
+// 匹配文章标题来生成目录树列表
+const getTocList = (str) => {
   // 匹配 h1-h6 标签里的内容, [\s\S] 表示一切字符；\1 第一个() 的内容；
   // x(?=y)为先行断言，x只有在y前面才匹配，y不会被计入返回结果
-  // 如 <h1 class="title">文章标题</h1> 只会匹配到 <h1 class="title">文章标题
+  // 如 <h1 id="文章一级标题">文章一级标题</h1> 只会匹配到 <h1 id="文章一级标题">文章一级标题
   const pattern = /<(h[1-6])[\s\S]+?(?=<\/\1>)/g
   const list = []
 
@@ -33,10 +33,10 @@ const getAnchorList = (str) => {
     const startIndex = metch.indexOf('"')
     const endIndex = metch.indexOf('">')
     const href = `#${metch.slice(startIndex + 1, endIndex)}`
-
+    const level = $1.replace(/h/, '')
     // 当前目录
     const currentToc = {
-      tag: $1,
+      level,
       title,
       href,
       children: []
@@ -49,14 +49,15 @@ const getAnchorList = (str) => {
 
 // 根据 html 生成锚点导航
 const AnchorNav = ({content}) => {
-  const list = getAnchorList(content)
+  const list = getTocList(content)
+  // 递归渲染导航
   const renderLink = ({href, title, children}) => (
     <Link key={href} href={href} title={title}>
       {children.length > 0 && children.map(sub => renderLink(sub))}
     </Link>
   )
   return (
-    <Anchor affix={false}>{list.map(renderLink)}</Anchor>
+    <Anchor className="anchor-nav" affix={true}>{list.map(renderLink)}</Anchor>
   )
 }
 

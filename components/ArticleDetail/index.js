@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { withRouter } from 'next/router'
 import { Row, Col, Drawer, Tag, Icon } from 'antd'
 import AnchorNav from './AnchorNav'
 import ArticleComment from '../Comment/index'
@@ -6,7 +7,7 @@ import { renderMarkdownToHtml } from '../../utils'
 import 'highlight.js/styles/atom-one-dark.css'
 import '../../static/style/article-detail.css'
 
-const ArticleDetail = () => {
+const ArticleDetail = ({router}) => {
 
   const markdown='## P01:课程介绍和环境搭建\n' +
   '[ **M** ] arkdown + E [ **ditor** ] = **Mditor**  \n' +
@@ -59,6 +60,8 @@ const ArticleDetail = () => {
   // markdown 转成 html
   const htmlContent = renderMarkdownToHtml(article.content)
 
+  const id = router.query.id
+
   return (
     <Row className="app-main">
       <Col xs={24} sm={24} md={24} lg={24} xl={18}>
@@ -77,8 +80,8 @@ const ArticleDetail = () => {
             </div>
           </div>
           <div className="article-content markdown" dangerouslySetInnerHTML={{__html: htmlContent}} />
+          <ArticleComment />
         </div>
-        <ArticleComment />
       </Col>
       <Col xs={0} sm={0} md={0} lg={0} xl={6}>
         <AnchorNav content={htmlContent} />
@@ -91,7 +94,8 @@ const ArticleDetail = () => {
         </div>
         <Drawer
           visible={drawerVisible}
-          onClose={() => showDrawerVisible(false)}>
+          onClose={() => showDrawerVisible(false)}
+          title={title}>
           <AnchorNav content={htmlContent}/>
         </Drawer>
       </Col>
@@ -99,4 +103,4 @@ const ArticleDetail = () => {
   )
 }
 
-export default ArticleDetail
+export default withRouter(ArticleDetail)

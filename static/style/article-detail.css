@@ -30,3 +30,9 @@
 .article-detail .article-content {
   margin: 24px auto;
 }
+
+/* 目录导航 */
+.anchor-nav {
+  position: fixed;
+  top: 104px;
+}

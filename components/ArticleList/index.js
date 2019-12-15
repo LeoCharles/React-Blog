@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Router from 'next/router'
 import { useMediaQuery } from 'react-responsive'
 import { Row, Col,  Divider, Drawer, Tag, Icon } from 'antd'
 import PreviewList from './PreviewList'
@@ -32,8 +33,45 @@ const ArticleList = () => {
       commentCount: 1,
       viewCount: 5,
       tag: 'javascript'
+    },
+    {
+      id: '4',
+      title: 'javascript 基础系列3 - 原型与原型链',
+      content: '实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的',
+      createdAt: '2019-1-25',
+      commentCount: 1,
+      viewCount: 5,
+      tag: 'javascript'
+    },
+    {
+      id: '5',
+      title: 'javascript 基础系列3 - 原型与原型链',
+      content: '实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的',
+      createdAt: '2019-1-25',
+      commentCount: 1,
+      viewCount: 5,
+      tag: 'javascript'
+    },
+    {
+      id: '6',
+      title: 'javascript 基础系列3 - 原型与原型链',
+      content: '实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的',
+      createdAt: '2019-1-25',
+      commentCount: 1,
+      viewCount: 5,
+      tag: 'javascript'
+    },
+    {
+      id: '7',
+      title: 'javascript 基础系列3 - 原型与原型链',
+      content: '实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的 VUE-MVVM实现简易的',
+      createdAt: '2019-1-25',
+      commentCount: 1,
+      viewCount: 5,
+      tag: 'javascript'
     }
   ])
+
   const [drawerVisible, showDrawerVisible ] = useState(false)
 
   // 判断是否为大屏幕
@@ -46,7 +84,10 @@ const ArticleList = () => {
       <Col xs={24} sm={24} md={24} lg={24} xl={18}>
         <ul className="article-list">
           {articleList.map(item => (
-            <li className="article" key={item.id}>
+            <li
+              className="article"
+              key={item.id}
+              onClick={() => Router.push({pathname: '/article', query: {id: item.id}})}>
               <Divider orientation="left">
                 <span className="article-title">{item.title}</span>
               </Divider>
@@ -72,21 +113,19 @@ const ArticleList = () => {
       <Col xs={0} sm={0} md={0} lg={0} xl={6} >
         <PreviewList list={articleList} title="文章列表" />
       </Col>
-      { !isLargeScreen && (
-        <>
-          <div
-            className="drawer-btn"
-            onClick={() => showDrawerVisible(true)}>
-            <Icon type='menu-o' />
-          </div>
-          <Drawer
-            visible={drawerVisible}
-            onClose={() => showDrawerVisible(false)}
-            title="文章列表">
-            <PreviewList list={articleList} />
-          </Drawer>
-        </>
-      )}
+      <Col xs={1} sm={1} md={1} lg={1} xl={0}>
+        <div
+          className="drawer-btn"
+          onClick={() => showDrawerVisible(true)}>
+          <Icon type='menu-o' />
+        </div>
+        <Drawer
+          visible={drawerVisible}
+          onClose={() => showDrawerVisible(false)}
+          title="文章列表">
+          <PreviewList list={articleList} />
+        </Drawer>
+      </Col>
     </Row>
   )
 }
