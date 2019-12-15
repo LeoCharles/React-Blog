@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Router from 'next/router'
-import { useMediaQuery } from 'react-responsive'
 import { Row, Col,  Divider, Drawer, Tag, Icon } from 'antd'
 import PreviewList from './PreviewList'
 import '../../static/style/article-list.css'
@@ -73,11 +72,6 @@ const ArticleList = () => {
   ])
 
   const [drawerVisible, showDrawerVisible ] = useState(false)
-
-  // 判断是否为大屏幕
-  const isLargeScreen = useMediaQuery({
-    query: '(min-width: 1200px)'
-  })
 
   return (
     <Row className="app-main" >

@@ -1,0 +1,55 @@
+/* 评论组件 */
+.discuss .discuss-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e8e8;
+}
+.discuss .discuss-header .count {
+  margin-right: 6px;
+  border-bottom: 1px dotted #1890ff;
+  color: #1890ff;
+}
+.discuss .discuss-header .user {
+  font-size: 14px;
+  cursor: pointer;
+}
+.discuss .discuss-header .user .anticon {
+  margin-left: 6px;
+}
+
+/* 编辑评论 */
+.conment-editor .comment-form .ant-form-item {
+  margin-bottom: 16px;
+}
+.conment-editor .comment-form .submit-item {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+.conment-editor .comment-form .tips {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+.conment-editor .comment-form .tips .anticon {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+/* 评论列表 */
+.comment-list {
+  margin-bottom: 20px;
+}
+.comment-list .replay-form .ant-form-item {
+  margin-bottom: 0;
+}
+.comment-list .replay-form .submit-item{
+  display: flex;
+  justify-content: flex-end;
+}
+.comment-list .replay-form .submit-item .tips {
+  color: #ccc;
+  font-size: 12px;
+  margin-right: 16px;
+}

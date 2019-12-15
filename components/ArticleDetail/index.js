@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { withRouter } from 'next/router'
 import { Row, Col, Drawer, Tag, Icon } from 'antd'
 import AnchorNav from './AnchorNav'
-import ArticleComment from '../Comment/index'
+import Discuss from '../Discuss/index'
 import { renderMarkdownToHtml } from '../../utils'
 import 'highlight.js/styles/atom-one-dark.css'
 import '../../static/style/article-detail.css'
@@ -80,7 +80,7 @@ const ArticleDetail = ({router}) => {
             </div>
           </div>
           <div className="article-content markdown" dangerouslySetInnerHTML={{__html: htmlContent}} />
-          <ArticleComment />
+          <Discuss />
         </div>
       </Col>
       <Col xs={0} sm={0} md={0} lg={0} xl={6}>
