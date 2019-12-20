@@ -1,60 +1,87 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Comment, List, Avatar, Form, Input, Button, Tooltip } from 'antd'
 
 const { TextArea } = Input
 
-const  CommentItem = () => {
+const  CommentItem = (props) => {
+  const {comment, children, showReplay} = props
+  const {content, user, createdAt} = comment
+
+  const [value, setValue] = useState('')
+  const [showTextArea, setTextArea] = useState(false)
+
+  const handleReplay = () => {
+    setValue('')
+    setTextArea(!showTextArea)
+  }
+
+  const handleKeyUp = (e) => {
+    if (e.ctrKey && e.keyCode === 13) {
+      handleSubmit()
+    }
+  }
+
+  const handleSubmit = () => {
+    console.log(value)
+  }
+
   return (
     <Comment
-      actions={[<span>回复</span>]}
-      author={<span>小明</span>}
+      actions={showReplay ? [<span onClick={handleReplay}>回复</span>] : []}
+      author={<span>{user.username}</span>}
       avatar={<Avatar />}
       datetime={
-        <Tooltip title={'2019-11-12 12:11:02'}>
+        <Tooltip title={createdAt}>
           <span>一天前</span>
         </Tooltip>
       }
-      content={
-        <div>测试测试</div>
-      }>
-      <Form className="replay-form">
-        <Form.Item>
-          <TextArea
-            placeholder={'回复小明...'}
-          />
-        </Form.Item>
-        <Form.Item className="submit-item">
-          <span className="tips">Ctrl or ⌘ + Enter</span>
-          <Button size="small">回复</Button>
-        </Form.Item>
-      </Form>
+      content={content}>
+        {
+          showTextArea && (
+            <Form>
+              <TextArea
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                onKeyUp={handleKeyUp}
+                placeholder={`回复${user.username}...`}
+              />
+              <div className="submit-item">
+                <span className="tips">Ctrl or ⌘ + Enter</span>
+                <Button
+                  onClick={handleSubmit}
+                  disabled={!value.trim()}
+                  size="small"
+                  >回复
+                </Button>
+              </div>
+            </Form>
+          )
+        }
+        {children}
     </Comment>
   )
 }
 
-const  CommentList = () => {
-
-  const comments = [
-    {
-      id: 1,
-      content: '测试评论'
-    },
-    {
-      id: 2,
-      content: '测试评论2'
-    }
-  ]
+const  CommentList = ({list}) => {
 
   return (
-    <List
-      className="comment-list"
-      dataSource={comments}
-      renderItem={item => (
-        <li>
-          <CommentItem />
-        </li>
-      )}>
-    </List>
+    <div className="comment-list">
+      {list.map(comment => (
+        <CommentItem
+          key={comment.id}
+          comment={comment}
+          showReplay={true}
+          >
+          {comment.replices.map(replay => (
+            <CommentItem
+              comment={replay}
+              key={replay.id}
+              showReplay={false}/>
+          ))
+          }
+        </CommentItem>
+      ))}
+    </div>
   )
 }
 

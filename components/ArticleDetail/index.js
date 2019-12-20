@@ -44,6 +44,15 @@ const ArticleDetail = ({router}) => {
   '>>> cccccccccc\n\n'+
   '``` var a=11; ```'
 
+  const commentList = [
+    {id: 12, content: '测试测试评论', createdAt: '2019-12-10 13:23:11', user: {id: 221, username: '小张'}, replices: [
+      {createdAt: "2019-09-20 17:16:56", id: 3,userId: 34113677,content: "谢谢",user: {id: 34113677, username: "gershonv"}}
+    ]},
+    {id: 13, content: 'aaaa', createdAt: '2019-12-11 03:02:22', user: {id: 123, username: 'leo'}, replices: [
+      {createdAt: "2019-09-21 15:17:23", id: 4,userId: 12313, content: "感谢",user: {id: 34113677, username: "gershonv"}}
+    ]},
+  ]
+
   const [article, setArticle] = useState({
     id: '1',
     title: 'javascript 基础系列1 - 原型与原型链',
@@ -51,12 +60,13 @@ const ArticleDetail = ({router}) => {
     createdAt: '2019-1-23',
     commentCount: 4,
     viewCount: 5,
-    tag: 'javascript'
+    tag: 'javascript',
+    comments: commentList
   })
 
   const [drawerVisible, showDrawerVisible ] = useState(false)
 
-  const { title, createdAt, commentCount, viewCount, tag } = article;
+  const { title, createdAt, commentCount, viewCount, tag, comments } = article;
   // markdown 转成 html
   const htmlContent = renderMarkdownToHtml(article.content)
 
@@ -80,7 +90,8 @@ const ArticleDetail = ({router}) => {
             </div>
           </div>
           <div className="article-content markdown" dangerouslySetInnerHTML={{__html: htmlContent}} />
-          <Discuss />
+
+          <Discuss articleId={id} comments={comments}/>
         </div>
       </Col>
       <Col xs={0} sm={0} md={0} lg={0} xl={6}>
