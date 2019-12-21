@@ -1,0 +1,46 @@
+// 引入 markdown
+@import './markdown.less';
+
+/* 页面公共样式 */
+ol, ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 文字超出显示省略 */
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  margin-top: 40px;
+  background: #fff;
+}
+
+.app-main {
+  padding: 0 20px;
+  height: calc(100vh - 64px - 40px);
+  overflow: auto;
+}
+
+/* 右侧抽屉 */
+.drawer-btn {
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.drawer-btn:hover {
+  color: #1890ff;
+}
+
+

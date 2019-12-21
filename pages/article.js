@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/Layout/index'
-import Sider from '../components/Sider/index'
-import ArticleDetail from '../components/ArticleDetail/index'
+import Layout from '../components/Layout'
+import Sider from '../components/Sider'
+import ArticleDetail from '../components/ArticleDetail'
 import { Row, Col } from 'antd'
 
 const Home = () => (

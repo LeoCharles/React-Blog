@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import { Menu, Dropdown, Icon } from 'antd'
 import CommentList from './CommentList'
 import CommentEditor from './CommentEditor'
-import '../../static/style/discuss.css'
+import '../../static/style/discuss.less'
 
 
 // 评论留言组件
@@ -10,9 +10,6 @@ const Discuss = (props) => {
   const { comments, articleId } = props
   const [value, setValue] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
-
-
-
 
   const handleMenuClick = (e) => {
     const handleMap = {

@@ -4,7 +4,7 @@ import SearchBar from './SearchBar'
 import NavBar from './NavBar'
 import UserInfo from './UserInfo'
 import DownList from './DownList'
-import '../../static/style/header.css'
+import '../../static/style/header.less'
 
 const CommonHeader = () => {
   return (

@@ -5,7 +5,7 @@ import AnchorNav from './AnchorNav'
 import Discuss from '../Discuss/index'
 import { renderMarkdownToHtml } from '../../utils'
 import 'highlight.js/styles/atom-one-dark.css'
-import '../../static/style/article-detail.css'
+import '../../static/style/article-detail.less'
 
 const ArticleDetail = ({router}) => {
 

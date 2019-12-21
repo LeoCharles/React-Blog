@@ -1,0 +1,87 @@
+/* 页面头部 */
+
+.header {
+  height: 64px;
+  line-height: 64px;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+  z-index: 1;
+  .header-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .logo {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      color: #1890ff;
+    }
+    // 下拉菜单
+    .dropdown {
+      width: 100vw;
+      top: 0 !important;
+      .nav-bar {
+        text-align: left;
+      }
+      .search-input {
+        width: calc(100vw - 50px);
+        border-bottom: 1px solid #ddd;
+      }
+      .search-icon {
+        color: inherit;
+      }
+    }
+  }
+  .header-right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .search-bar {
+      display: flex;
+      align-items: center;
+      height: 24px;
+      padding: 0 16px;
+      line-height: 24px;
+      border-left: 1px solid #ebedf0;
+      .search-icon {
+        margin-right: 4px;
+        color: #ced4d9;
+        cursor: pointer;
+      }
+      .search-input {
+        font-size: 14px;
+        border: 0;
+        outline:none;
+        box-shadow: none;
+        &:focus {
+          outline:none;
+          box-shadow: none;
+        }
+      }
+    }
+    .nav-bar {
+      flex: 1;
+      font-size: 14px;
+      text-align: right;
+      border-bottom: none;
+      .ant-menu-item {
+        height: 64px;
+        line-height: 64px;
+      }
+    }
+    .user-info {
+      display: flex;
+      justify-content: center;
+      .ant-btn:first-child {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header .header-right .nav-bar {
+    text-align: center;
+  }
+}

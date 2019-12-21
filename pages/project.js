@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout/index'
-import Sider from '../components/Sider/index'
+import Layout from '../components/Layout'
+import Sider from '../components/Sider'
 import { Row, Col } from 'antd'
 
 const Home = () => (

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Icon, Divider, Tag} from 'antd'
 import Author from './Author'
-import '../../static/style/sider.css'
+import '../../static/style/sider.less'
 
 const Sider = () => {
 

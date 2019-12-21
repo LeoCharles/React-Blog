@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Router from 'next/router'
 import { Row, Col,  Divider, Drawer, Tag, Icon } from 'antd'
 import PreviewList from './PreviewList'
-import '../../static/style/article-list.css'
+import '../../static/style/article-list.less'
 
 const ArticleList = () => {
   const [articleList, setArticleList] = useState([

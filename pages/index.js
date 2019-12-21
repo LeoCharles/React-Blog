@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../components/Layout/index'
-import Sider from '../components/Sider/index'
-import ArticleList from '../components/ArticleList/index'
+import Layout from '../components/Layout'
+import Sider from '../components/Sider'
+import ArticleList from '../components/ArticleList'
 import { Row, Col } from 'antd'
 
 const Home = () => (
@@ -15,7 +15,6 @@ const Home = () => (
       </Col>
     </Row>
   </Layout>
-
 )
 
 export default Home

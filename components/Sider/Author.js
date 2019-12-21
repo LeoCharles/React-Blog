@@ -9,11 +9,11 @@ const Author = () => {
       <h2 className="title">刘木木</h2>
       <p className="sub-title">前端打杂人员，略微代码洁癖</p>
       <p className="links">
-        <Icon type='github' className='link-icon' />
+        <Icon type='github' className='icon' />
         <span>Github</span>
       </p>
       <p className="links">
-        <Icon type="mail" className='link-icon' />
+        <Icon type="mail" className='icon' />
         <span>leofe200@gmail.com</span>
       </p>
     </div>
