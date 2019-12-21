@@ -1,5 +1,10 @@
 import React, {useState} from 'react'
-import { Comment, List, Avatar, Form, Input, Button, Tooltip } from 'antd'
+import { Comment, Avatar, Form, Input, Button, Tooltip } from 'antd'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+import relativeTime  from 'dayjs/plugin/relativeTime'
+dayjs.locale('zh-cn')       // 使用中文
+dayjs.extend(relativeTime)  // 相对时间插件
 
 const { TextArea } = Input
 
@@ -32,7 +37,7 @@ const  CommentItem = (props) => {
       avatar={<Avatar />}
       datetime={
         <Tooltip title={createdAt}>
-          <span>一天前</span>
+          <span>{dayjs(createdAt).fromNow()}</span>
         </Tooltip>
       }
       content={content}>

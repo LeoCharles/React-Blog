@@ -59,7 +59,8 @@ const Discuss = (props) => {
         articleId={articleId}
         onChange={e => setValue(e.target.value)}
         onSubmit={handleSubmit}/>
-      <CommentList list={comments}/>
+      <CommentList
+        list={comments}/>
     </div>
   )
 }

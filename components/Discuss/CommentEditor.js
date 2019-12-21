@@ -14,13 +14,22 @@ const CommentEditor = ({ value, loading, articleId, onChange, onSubmit }) => {
       content={
         <Form className="comment-form">
           <Form.Item>
-            <TextArea rows={4} onChange={onChange} value={value} placeholder="说点什么..."/>
+            <TextArea
+              rows={4}
+              value={value}
+              onChange={onChange}
+              placeholder="说点什么..."/>
           </Form.Item>
           <Form.Item className="submit-item">
             <span className="tips">
               <Icon type="file-markdown" />支持 Markdown 语法
             </span>
-            <Button htmlType="submit" loading={loading} onClick={onSubmit} type="primary">
+            <Button
+              type="primary"
+              htmlType="submit"
+              loading={loading}
+              onClick={onSubmit}
+              disabled={!value.trim()}>
               {articleId ? '发表评论' : '留言'}
             </Button>
           </Form.Item>
