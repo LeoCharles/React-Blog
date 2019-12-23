@@ -11,3 +11,9 @@ export const COLOR_LIST = [
   'cyan',
   'purple'
 ]
+
+// 用户角色
+export const ROLE_TYPE = {
+  1: 'admin',
+  2: 'user'
+}
