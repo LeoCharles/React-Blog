@@ -1,3 +1,6 @@
+// app
+export const APP_SWITCH_SIGN_MODAL = 'APP_SWITCH_SIGN_MODAL'
+
 // user
 export const USER_LOGIN = 'USER_LOGIN'
 export const USER_LOGOUT = 'USER_LOGOUT'

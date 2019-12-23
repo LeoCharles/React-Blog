@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+import Router, { withRouter } from 'next/router'
 import { Dropdown, Menu, Icon, Input } from 'antd'
 
 const DownList = () => {
   const [keyword, setKeyword] = useState('')
+
+  const navList = [
+    {name: '首页', icon: 'home', key: '/index'},
+    {name: '项目', icon: 'project', key: '/project'},
+    {name: '关于', icon: 'user', key: '/about'},
+  ]
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -15,16 +22,17 @@ const DownList = () => {
   }
 
   const menu = (
-    <Menu className="nav-bar" mode="vertical">
-      <Menu.Item key="home">
-        <Icon type="home" />首页
-      </Menu.Item>
-      <Menu.Item key="project">
-        <Icon type="appstore" />项目
-      </Menu.Item>
-      <Menu.Item key="about">
-        <Icon type="user" />关于
-      </Menu.Item>
+    <Menu
+      className="nav-bar"
+      mode="vertical"
+      onClick={e => Router.push(e.key)}>
+      {
+        navList.map(item => (
+          <Menu.Item key={item.key}>
+            <Icon type={item.icon} />{item.name}
+          </Menu.Item>
+        ))
+      }
       <Menu.Item key="search">
         <Icon type="search" className="search-icon"/>
         <Input
@@ -50,4 +58,4 @@ const DownList = () => {
   )
 }
 
-export default DownList
+export default withRouter(DownList)
