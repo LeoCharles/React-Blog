@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { withRouter } from 'next/router'
-import { Row, Col, Drawer, Tag, Icon } from 'antd'
+import { Row, Col, Drawer, Divider, Tag, Icon } from 'antd'
 import AnchorNav from './AnchorNav'
 import Discuss from '../Discuss/index'
 import { renderMarkdownToHtml } from '../../utils'

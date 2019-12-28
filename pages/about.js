@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Sider from '../components/Sider'
 import { Row, Col } from 'antd'
 
-const Home = () => (
+const About = () => (
   <Layout>
     <Row className="app-wrapper">
       <Col xs={0} sm={0} md={0} lg={6} xl={5}>
@@ -16,4 +16,4 @@ const Home = () => (
   </Layout>
 )
 
-export default Home
+export default About

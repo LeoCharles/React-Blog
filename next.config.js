@@ -10,3 +10,11 @@ module.exports = withCss(withLess({
   // 是否使用 css modules
   cssModules: false
 }))
+
+// 自定义 webpack 配置
+module.exports = {
+  webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+
+    return config
+  }
+}

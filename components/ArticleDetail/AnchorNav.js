@@ -57,7 +57,9 @@ const AnchorNav = ({content}) => {
     </Link>
   )
   return (
-    <Anchor className="anchor-nav" affix={true}>{list.map(renderLink)}</Anchor>
+    <Anchor className="anchor-nav" affix={true}>
+      {list.map(renderLink)}
+    </Anchor>
   )
 }
 

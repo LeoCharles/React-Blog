@@ -34,7 +34,7 @@ const  CommentItem = (props) => {
     <Comment
       actions={showReplay ? [<span onClick={handleReplay}>回复</span>] : []}
       author={<span>{user.username}</span>}
-      avatar={<Avatar />}
+      avatar={<Avatar icon="user" />}
       datetime={
         <Tooltip title={createdAt}>
           <span>{dayjs(createdAt).fromNow()}</span>
